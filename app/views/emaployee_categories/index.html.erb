@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Emaployee Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @emaployee_categories.each do |emaployee_category| %>
+      <tr>
+        <td><%= emaployee_category.name %></td>
+        <td><%= link_to 'Show', emaployee_category %></td>
+        <td><%= link_to 'Edit', edit_emaployee_category_path(emaployee_category) %></td>
+        <td><%= link_to 'Destroy', emaployee_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Emaployee category', new_emaployee_category_path %>
